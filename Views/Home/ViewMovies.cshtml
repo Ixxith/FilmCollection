@@ -41,7 +41,9 @@
         <tbody>
             @foreach (FilmCollection.Models.Movie x in Model)
             {
+        @if (x.Title.Contains("Independence Day")==false) {
             <tr>
+                
                 <td>@x.Title</td>
                 <td>@x.Category</td>
                 <td>@x.Year</td>
@@ -51,7 +53,7 @@
                 <td>@x.LentTo</td>
                 <td>@x.Notes</td>
             </tr>
-            }
+            }}
         </tbody>
     </table>
 </div>
