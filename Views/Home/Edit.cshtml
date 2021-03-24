@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Edit Movie";
+}
+
+@model FilmCollection.Models.Movie
+<div class="text-center">
+    <h1>
+        @ViewBag.Title
+    </h1>
+    <div class="text-left">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="MovieId" name="movieId" />
+            <label class="col-form-label" asp-for="Title">Title</label>
+            <input class="form-control" asp-for="Title" />
+            <label class="col-form-label" asp-for="Category">Category</label>
+            <input class="form-control" asp-for="Category" />
+            <label class="col-form-label" asp-for="Year">Year</label>
+            <input class="form-control" asp-for="Year" />
+            <label class="col-form-label" asp-for="Director">Director</label>
+            <input class="form-control" asp-for="Director" />
+            <label class="col-form-label" asp-for="Rating">Rating</label>
+            <select class="form-control" asp-for="Rating">
+                <option value="G">G</option>
+                <option value="PG">PG</option>
+                <option value="PG-13">PG-13</option>
+                <option value="R">R</option>
+            </select>
+            <label class="col-form-label" asp-for="Edited">Edited</label>
+            <select class="form-control" asp-for="Edited">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+            <label class="col-form-label" asp-for="LentTo">LentTo</label>
+            <input class="form-control" asp-for="LentTo" />
+            <label class="col-form-label" asp-for="Notes">Notes</label>
+            <input class="form-control" asp-for="Notes" />
+            <br />
+            <button type="submit" class="btn btn-dark">Submit</button>
+            <div asp-validation-summary="All"></div>
+        </form>
+    </div>
+</div>
